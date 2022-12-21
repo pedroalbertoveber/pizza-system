@@ -4,6 +4,8 @@ const app = express();
 
 // routes
 const DoughRoutes = require('./routes/DoughRoutes');
+const EdgeRoutes = require('./routes/EdgeRoutes');
+const FlavorRoutes = require('./routes/FlavorRoutes');
 
 require('./database/index');
 
@@ -12,6 +14,8 @@ app.use(express.json());
 
 // config routes;
 app.use('/dough', DoughRoutes);
+app.use('/edge', EdgeRoutes);
+app.use('/flavor', FlavorRoutes);
 
 
 try {

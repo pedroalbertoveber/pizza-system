@@ -9,5 +9,7 @@ const FlavorController = require('../controllers/FlavorController');
 routes.post('/create', FlavorController.store);
 //GET
 routes.get('/', FlavorController.index);
+//PATCH
+routes.patch('/update/:id', FlavorController.update);
 
 module.exports = routes;

@@ -10,6 +10,10 @@ class Edge extends Model {
       tableName: 'edges' 
     });
   }
+
+  static associate(models) {
+    this.hasMany(models.Pizza, { foreignKey: 'edge_id', as: 'edges'});
+  }
 }
 
 module.exports = Edge;

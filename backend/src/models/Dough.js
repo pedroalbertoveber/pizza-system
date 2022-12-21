@@ -10,6 +10,10 @@ class Dough extends Model {
       tableName: 'doughes' 
     });
   }
+
+  static associate(models) {
+    this.hasMany(models.Pizza, { foreignKey: 'dough_id', as: 'doughes'});
+  }
 }
 
 module.exports = Dough;

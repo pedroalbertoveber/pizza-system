@@ -29,6 +29,31 @@ module.exports = {
       return res.status(200).json({ message: 'Você ainda não possui nenhum sabor de pizza!' });
     }
 
-    return res.status(200).json({ flavors: allFlavors });
-  }
+    return res.status(200).json(allFlavors);
+  },
+
+  async update (req, res) {
+    const { name } = req.body;
+    const { id } = req.params;
+
+    if (!name) {
+      res.status(422).json({ message: 'O sabor da pizza é obrigatório!' });
+      return;
+    }
+
+    const alreadyExists = await Flavor.findOne({ where: { name }});
+
+    if (alreadyExists && String(id) !== String(alreadyExists.id)) {
+      res.status(422).json({ message: 'Este sabor já está cadastrada!'});
+      return;
+    }
+
+    await Flavor.update({ name }, {
+      where: {
+        id: id,
+      },
+    });
+
+    return res.status(200).json({ id: id, name: name });
+  },
 };

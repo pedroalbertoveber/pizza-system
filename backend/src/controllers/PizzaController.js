@@ -1,5 +1,7 @@
 //models
 const Pizza = require('../models/Pizza');
+const Order = require('../models/Order');
+const Status = require('../models/Status');
 
 module.exports = {
   async store(req, res) {
@@ -39,7 +41,15 @@ module.exports = {
       newPizza.addFlavor(flavor);
     });
 
-    res.status(200).json(newPizza);
+    const initialStatus = await Status.findOne({
+      where: {
+        type: 'Em produção',
+      },
+    });
+
+    await Order.create({ pizza_id: newPizza.id, status_id: initialStatus.id });
+
+    return res.status(200).json(newPizza);
   },
 
   async index(req, res) {
@@ -68,5 +78,5 @@ module.exports = {
     }
 
     return res.status(200).json(allPizzas);
-  }
+  },
 };

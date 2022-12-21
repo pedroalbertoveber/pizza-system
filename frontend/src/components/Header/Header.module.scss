@@ -1,0 +1,29 @@
+@import 'styles/breakpoints';
+@import 'styles/colors';
+
+.headerContainer {
+  background-color: #000;
+  width: 100%;
+  padding: $padding-default;
+
+  div {
+    max-width: $max-width;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 0;
+
+    img {
+      width: 40px;
+    }
+  }
+
+  @media screen and (max-width: $smart-phones) {
+    padding: $padding-mobile;
+
+    div {
+      justify-content: center;
+    }
+  }
+}

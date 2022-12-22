@@ -24,4 +24,8 @@ a {
   cursor: pointer;
 }
 
+.container {
+  min-height: 80vh;
+}
+
 

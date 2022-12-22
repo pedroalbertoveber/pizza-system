@@ -1,0 +1,29 @@
+@import 'styles/colors';
+@import 'styles/breakpoints';
+
+.containerDefault {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: $padding-default;
+  padding-top: 2em;
+  padding-bottom: 3em;
+
+  @media screen and (max-width: $mobile-devices) {
+    padding: $padding-mobile;
+    padding-top: 2em;
+    padding-bottom: 3em;
+  }
+
+  .pageHeader {
+    width: 100%;
+    padding: 1em 0 2em;
+    border-bottom: 1px solid #000;
+    h2 {
+      font-size: 4em;
+      @media screen and (max-width: $mobile-devices) {
+        font-size: 3em;
+      }
+    }    
+  }
+}

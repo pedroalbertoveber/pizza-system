@@ -1,10 +1,10 @@
 /* CSS */
 import styles from "./Banner.module.scss";
 
-const Banner = () => {
+const Banner = ({ title }) => {
   return (
     <div className={styles.bannerContainer}>
-      <h4>Faça seu pedido</h4>
+      <h4>{ title }</h4>
     </div>
   );
 };

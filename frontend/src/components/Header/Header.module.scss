@@ -4,7 +4,6 @@
 .headerContainer {
   background-color: #000;
   width: 100%;
-  padding: $padding-default;
 
   div {
     max-width: $max-width;
@@ -12,7 +11,9 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 20px 0;
+    padding: $padding-default;
+    padding-top: 20px;
+    padding-bottom: 20px;
 
     img {
       width: 40px;
@@ -20,10 +21,13 @@
   }
 
   @media screen and (max-width: $smart-phones) {
-    padding: $padding-mobile;
 
     div {
       justify-content: center;
+      padding: $padding-mobile;
+      padding-top: 20px;
+      padding-bottom: 20px;
+  
     }
   }
 }

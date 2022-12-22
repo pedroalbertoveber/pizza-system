@@ -1,0 +1,17 @@
+@import 'styles/breakpoints';
+@import 'styles/colors';
+
+.footerContainer {
+  width: 100%;
+  background-color: #000;
+
+  div {
+    max-width: $max-width;
+    margin: 0 auto;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+  }
+}

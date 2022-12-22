@@ -13,6 +13,9 @@ const OrderRoutes = require('./routes/OrderRoutes');
 
 require('./database/index');
 
+// solve CORS
+app.use(cors({ credentials: true, origin: 'http://localhost:3000'}));
+
 // config express to get json response;
 app.use(express.json());
 
@@ -24,8 +27,6 @@ app.use('/pizza', PizzaRoutes);
 app.use('/status', StatusRoutes);
 app.use('/order', OrderRoutes);
 
-// solve CORS
-app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 
 try {
   app.listen(3333);

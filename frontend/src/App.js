@@ -5,10 +5,10 @@ import 'react-toastify/dist/ReactToastify.css';
 
 // pages
 import Home from 'pages/Home';
+import Controller from 'pages/Controller';
 
 //components
 import Header from 'components/Header';
-import Banner from 'components/Banner';
 import Footer from 'components/Footer';
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/adm' element={<Controller />} />
         </Routes>
       </BrowserRouter>
     </main>

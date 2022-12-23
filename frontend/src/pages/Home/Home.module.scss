@@ -26,6 +26,15 @@
       select {
         padding: 10px 5px;
       }
+
+      .multiOption {
+        padding: 0;
+
+        option {
+          font-size: 1.1em;
+          padding: 5px;
+        }
+      }
     }
 
     input[type="submit"] {

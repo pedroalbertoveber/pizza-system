@@ -104,7 +104,7 @@ const Home = () => {
           </div>
           <div className={styles.formControl}>
             <label htmlFor="flavors">Selecione os sabores (máx 3):</label>
-            <select name="flavor" multiple value={flavors} onChange={(e) => setFlavors([...flavors, e.target.value])}>
+            <select name="flavor" multiple value={flavors} onChange={(e) => setFlavors([...flavors, e.target.value])} className={styles.multiOption}>
               {flavorList.map(flavor => (
                 <option key={flavor.id} value={flavor.id}>{flavor.name}</option>
               ))}

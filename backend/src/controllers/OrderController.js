@@ -38,14 +38,14 @@ module.exports = {
 
   async changePizzaStatus(req, res) {
     const { id } = req.params;
-    const { type } = req.body;
+    const { status_id } = req.body;
 
-    if(!type) {
+    if(!status_id) {
       res.status(422).json({ message: 'É necessário informar um status para a pizza!' });
       return;
     }
 
-    await Order.update({ status_id: type }, {
+    await Order.update({ status_id, }, {
       where: { id: id },
     });
 
